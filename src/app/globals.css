@@ -18,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2a2a2a;
+    --background: #000000;
     --foreground: #f8f8f8;
     --primary: #b46aa0;
     --secondary: #f5b7a2;
@@ -40,4 +40,10 @@ body {
 .font-DancingS {
   font-family: "My CustomFont", sans-serif;
   font-weight: 900;
+}
+
+.flexcent {
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }

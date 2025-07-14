@@ -11,6 +11,7 @@ interface PostType {
   createdAt: string;
   likes: number;
   comments: number;
+  price: string;
   user: {
     name: string;
     avatar: string;
@@ -38,6 +39,7 @@ const Posts = () => {
               time={post.createdAt}
               likes={post.likes}
               comments={post.comments}
+              price={post.price}
               user={post.user}
             />
           </div>

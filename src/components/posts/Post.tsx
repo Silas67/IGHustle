@@ -1,6 +1,7 @@
 // /components/Post.tsx
 import React from "react";
 import Image from "next/image";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface PostProps {
   id: string;
@@ -9,6 +10,7 @@ interface PostProps {
   time: string;
   likes: number;
   comments: number;
+  price: string;
   user: {
     name: string;
     avatar: string;
@@ -23,10 +25,11 @@ const Post: React.FC<PostProps> = ({
   time,
   likes,
   comments,
+  price,
   user,
 }) => {
   return (
-    <div className=" py-4 mb-8 bg-background" id={id}>
+    <div className=" py-4 mb-8 bg-background dark:bg-transparent" id={id}>
       <div className="flex items-center gap-3 mb-2">
         <Image
           src={user.avatar}
@@ -37,27 +40,51 @@ const Post: React.FC<PostProps> = ({
         />
         <div>
           <p className="font-semibold">{user.name}</p>
-          <p className="text-sm text-gray-500">{user.igHandle}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            {user.igHandle}
+          </p>
         </div>
       </div>
 
-      <Image
-        src={img}
-        width={100}
-        height={100}
-        className="w-full h-64 object-cover rounded-md mb-4"
-        alt="Post"
-      />
+      <div className="relative">
+        <Image
+          src={img}
+          width={100}
+          height={100}
+          className="w-full h-64 object-cover  mb-4"
+          alt="Post"
+        />
+        <div className="absolute top-4 right-4 py-2 px-3.5 text-[#f8f8f8] rounded-full bg-background/70  h-[20px] flexcent">
+          {price}
+        </div>
+      </div>
 
       <div className="px-2">
-        <p className="text-sm text-gray-800 mb-2">{caption}</p>
-        <div className="text-xs text-gray-500 flex flex-col gap-2">
-          <div className="flex gap-4">
-            <span>❤️ {likes}</span>
-            <span>💬 {comments}</span>
-          </div>
-
-          <span>{new Date(time).toLocaleDateString()}</span>
+        <div className="flex gap-4 text-sm">
+          <span className="flex items-center gap-2">
+            <Icon
+              icon="mage:heart-fill"
+              width="24"
+              height="24"
+              className="text-red-500"
+            />{" "}
+            {likes}
+          </span>
+          <span className="flex items-center gap-2 ">
+            <Icon
+              icon="iconamoon:comment-light"
+              width="24"
+              height="24"
+              className="transform scale-x-[-1]"
+            />{" "}
+            {comments}
+          </span>
+        </div>
+        <p className="text-sm text-neutral-800-800 my-2 dark:text-neutral-200">
+          {caption}
+        </p>
+        <div className="text-xs text-neutral-500 dark:text-neutral-400 flex flex-col gap-2">
+          {new Date(time).toLocaleDateString()}
         </div>
       </div>
     </div>
