@@ -1,5 +1,5 @@
 // /components/Post.tsx
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
@@ -28,6 +28,13 @@ const Post: React.FC<PostProps> = ({
   price,
   user,
 }) => {
+  const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(likes);
+
+  const toggleLike = () => {
+    setLiked((prev) => !prev);
+    setLikesCount((prev) => (liked ? prev - 1 : prev + 1));
+  };
   return (
     <div className=" py-4 mb-8 bg-background dark:bg-transparent" id={id}>
       <div className="flex items-center gap-3 mb-2">
@@ -61,15 +68,19 @@ const Post: React.FC<PostProps> = ({
 
       <div className="px-2">
         <div className="flex gap-4 text-sm">
-          <span className="flex items-center gap-2">
-            <Icon
-              icon="mage:heart-fill"
-              width="24"
-              height="24"
-              className="text-red-500"
-            />{" "}
-            {likes}
-          </span>
+          <button className="flex items-center gap-2" onClick={toggleLike}>
+            {liked ? (
+              <Icon
+                icon="mage:heart-fill"
+                width="24"
+                height="24"
+                className="text-red-500"
+              />
+            ) : (
+              <Icon icon="mage:heart" width="24" height="24" className="" />
+            )}
+            {likesCount}
+          </button>
           <span className="flex items-center gap-2 ">
             <Icon
               icon="iconamoon:comment-light"

@@ -43,7 +43,7 @@ export const posts = [
     }
   },
    {
-    id: "2",
+    id: "4",
     caption: "Fresh thrift drop 🔥",
     img: "/sample2.jpg",
     createdAt: "2024-07-06T14:45:00Z",

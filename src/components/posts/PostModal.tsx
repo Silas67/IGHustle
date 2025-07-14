@@ -17,7 +17,7 @@ interface PostModalProps {
 
 const PostModal: React.FC<PostModalProps> = ({ post, onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center max-sm:hidden">
       <div className="bg-white w-[90%] max-w-md rounded-lg shadow-lg p-4 relative">
         <button
           onClick={onClose}
