@@ -28,7 +28,7 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className="max-w-md  py-4">
+    <div className="max-w-md py-">
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id} onClick={() => setSelectedPost(post)}>
