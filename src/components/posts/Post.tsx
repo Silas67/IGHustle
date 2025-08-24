@@ -70,7 +70,7 @@ const Post: React.FC<PostProps> = ({
             <p className="font-semibold lowercase">{user.name}</p>
           </div>
         </div>
-        <Icon icon="mage:dots" width="24" height="24" className="rotate-90" />
+        <Icon icon="mage:dots" width="24" height="24" />
       </div>
 
       {/* Post Image */}
@@ -142,7 +142,9 @@ const Post: React.FC<PostProps> = ({
         {/* Caption */}
         <div className="flex items-center gap-2 my-2">
           <p className="font-bold lowercase">{user.name}</p>
-          <p className=" text-neutral-800  dark:text-neutral-200">{caption}</p>
+          <p className=" text-neutral-800  dark:text-neutral-200 line-clamp-1">
+            {caption}
+          </p>
         </div>
 
         {/* Date Posted */}

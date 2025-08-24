@@ -30,14 +30,14 @@ export const posts = [
   },
   {
     id: "3",
-    caption: "Check out this amazing product!",
-    img: "/sample1.jpg",
+    caption: "SkinCare that shows your skin you care!",
+    img: "/sample3.jpg",
     createdAt: "2024-07-05T08:30:00Z",
     likes: 23,
     comments: 5,
     price: "150,000",
     user: {
-      name: "Glow_Skincare",
+      name: "Beautyworks",
       avatar: "/avatar1.jpg",
       igHandle: "@glowskin"
     }
