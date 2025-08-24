@@ -39,7 +39,7 @@ const CommentModal = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div className="block sm:flex items-center justify-center overlay max-sm:bg-white max-h-screen sm:py-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 w-full sm:max-w-4xl bg-white dark:bg-gray-900 sm:rounded-lg overflow-hidden fixed h-[95vh] bottom-0 rounded-t-3xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 w-full sm:max-w-4xl bg-white dark:bg-gray-900 sm:rounded-lg overflow-hidden fixed h-[90vh] bottom-0 rounded-t-3xl">
         {/* Close Button */}
         <button
           onClick={onClose}
