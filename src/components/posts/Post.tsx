@@ -74,12 +74,12 @@ const Post: React.FC<PostProps> = ({
       </div>
 
       {/* Post Image */}
-      <div className="relative">
+      <div className="relative aspect-[3/4] mb-4  z-10 ">
         <Image
           src={img}
           width={100}
           height={100}
-          className="w-full aspect-[3/4] h-full object-cover z-10 mb-4"
+          className="w-full h-full object-cover"
           priority
           quality={100}
           alt="Post"
