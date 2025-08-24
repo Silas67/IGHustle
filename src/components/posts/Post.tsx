@@ -80,6 +80,8 @@ const Post: React.FC<PostProps> = ({
           width={100}
           height={100}
           className="w-full aspect-[3/4] h-full object-cover z-10 mb-4"
+          priority
+          quality={100}
           alt="Post"
         />
         {/* <div className="absolute top-4 right-4 py-2 px-4 text-foreground rounded-full bg-background/70  h-[20px] flexcent ">
