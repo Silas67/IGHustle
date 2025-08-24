@@ -9,7 +9,7 @@ export const posts = [
     comments: 5,
     price: "10,000",
     user: {
-      name: "Glow Skincare",
+      name: "Glow_Skincare",
       avatar: "/avatar1.jpg",
       igHandle: "@glowskin"
     }
@@ -37,7 +37,7 @@ export const posts = [
     comments: 5,
     price: "150,000",
     user: {
-      name: "Glow Skincare",
+      name: "Glow_Skincare",
       avatar: "/avatar1.jpg",
       igHandle: "@glowskin"
     }
