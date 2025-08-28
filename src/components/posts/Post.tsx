@@ -1,5 +1,7 @@
 // /components/Post.tsx
+
 import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CommentModal from "../comments/CommentModal";
@@ -58,18 +60,21 @@ const Post: React.FC<PostProps> = ({
     >
       {/* Avartar */}
       <div className="flex items-center justify-between mb-4 px-4">
-        <div className="flex items-center gap-3">
-          <Image
-            src={user.avatar}
-            width={100}
-            height={100}
-            className="w-10 h-10 rounded-full"
-            alt="User Avatar"
-          />
-          <div>
-            <p className="font-semibold lowercase">{user.name}</p>
+        <Link href={`/profile/${user.name}`}>
+          <div className="flex items-center gap-3">
+            <Image
+              src={user.avatar}
+              width={100}
+              height={100}
+              className="w-10 h-10 rounded-full"
+              alt="User Avatar"
+            />
+            <div>
+              <p className="font-semibold lowercase">{user.name}</p>
+            </div>
           </div>
-        </div>
+        </Link>
+
         <Icon icon="mage:dots" width="24" height="24" />
       </div>
 
@@ -92,7 +97,7 @@ const Post: React.FC<PostProps> = ({
       {/* Likes, Comments and Captions */}
       <div className="px-4">
         <div className="flex gap-4 text-sm items-center justify-between">
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             {/* Like Button */}
             <button
               className={`flex items-center gap-2 transition-discrete duration-1000 ${
@@ -124,6 +129,10 @@ const Post: React.FC<PostProps> = ({
                 className="transform scale-x-[-1]"
               />{" "}
               {comments}
+            </button>
+            {/* Share Button */}
+            <button className={`flex items-center gap-2 `}>
+              <Icon icon="bitcoin-icons:share-outline" width="24" height="24" />
             </button>
           </div>
 

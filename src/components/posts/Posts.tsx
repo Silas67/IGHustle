@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 import PostModal from "./PostModal";
-import { posts as fakePosts } from "../data/postsData";
+import { posts as fakePosts } from "@/lib/data/postsData";
 
 interface PostType {
   id: string;
