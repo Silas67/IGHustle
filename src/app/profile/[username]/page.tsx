@@ -3,8 +3,15 @@ import ProfileInfo from "@/components/profilePage/profileInfo";
 import PostsGallery from "@/components/profilePage/PostsGallery";
 import { posts } from "@/lib/data/postsData";
 
-export default function Page({ params }: { params: { username: string } }) {
-  const username = params.username;
+interface ProfileParams {
+  username: string;
+}
+
+interface ProfilePageProps {
+  params: Promise<ProfileParams>;
+}
+export async function Page({ params }: ProfilePageProps) {
+  const { username } = await params;
   const post = posts.find((post) => post.user.name === username);
   const user = post?.user;
 
