@@ -10,7 +10,7 @@ interface ProfileParams {
 interface ProfilePageProps {
   params: Promise<ProfileParams>;
 }
-export async function page({ params }: ProfilePageProps) {
+export default async function page({ params }: ProfilePageProps) {
   const { username } = await params;
   const post = posts.find((post) => post.user.name === username);
   const user = post?.user;
