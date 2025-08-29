@@ -3,11 +3,14 @@ import ProfileInfo from "@/components/profilePage/profileInfo";
 import PostsGallery from "@/components/profilePage/PostsGallery";
 import { posts } from "@/lib/data/postsData";
 
-export default function Page({ params }: { params: { username: string } }) {
-  const username = params.username as string;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ username: string }>;
+}) {
+  const username = (await params).username;
   const post = posts.find((post) => post.user.name === username);
   const user = post?.user;
-
   return (
     <div className="min-h-screen">
       <ProfileInfo
